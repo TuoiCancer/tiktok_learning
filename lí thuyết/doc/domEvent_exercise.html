@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //render ra giao diện các blog và khi click vào tên của blog thì alert tên đó lên 
+        const courses = [
+            {
+                "id": 65,
+                "user_id": 1,
+                "title": "Tổng hợp các sản phẩm của học viên tại F8 👏👏",
+                "slug": "tong-hop-cac-san-pham-cua-hoc-vien-tai-f8",
+                "description": "các sản phẩm của học viên đã tham gia học tại F8",
+                "meta_title": "Tổng hợp các sản phẩm của học viên tại F8",
+                "meta_description": "Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình web F8. Các dự án dưới...",
+                "image": "blog_posts/65/6139fe28a9844.png",
+                "thumbnail": "blog_posts/65/6139fe28a9844.png",
+                "min_read": 6,
+                "published_at": "2021-09-09 17:46:12",
+                "is_approved": true,
+                "created_at": "2021-09-09T02:35:13.000000Z",
+                "reactions_count": 792,
+                "image_url": "https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png",
+                "thumbnail_url": "https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png",
+                "is_bookmark": false,
+                "is_published": true,
+                "user": {
+                    "id": 1,
+                    "username": "son-dang",
+                    "first_name": "Sơn",
+                    "last_name": "Đặng",
+                    "full_name": "Sơn Đặng",
+                    "avatar": "user_avatars/1/623d4b2d95cec.png",
+                    "avatar_url": "https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png",
+                    "cover_url": "",
+                    "is_comment_blocked": false,
+                    "is_blocked": false
+                }
+            },
+            {
+                "id": 279,
+                "user_id": 1,
+                "title": "[Phần 1] Tạo dự án ReactJS với Webpack và Babel",
+                "slug": "phan-1-tao-du-an-reactjs-voi-webpack-va-babel",
+                "description": null,
+                "meta_title": "[Phần 1] Tạo dự án ReactJS với Webpack và Babel",
+                "meta_description": "Tự tạo dự án ReactJS với webpack và babel nhằm mục đích giúp chúng ta hiểu rõ hơn về về cách create-react-app đã tạo ra dự án ReactJS như thế nào và quan...",
+                "image": "blog_posts/279/6153f692d366e.jpg",
+                "thumbnail": "blog_posts/279/6153f6932dcea.jpg",
+                "min_read": 12,
+                "published_at": "2021-09-29 12:16:03",
+                "is_approved": true,
+                "created_at": "2021-09-13T08:14:19.000000Z",
+                "reactions_count": 409,
+                "image_url": "https://files.fullstack.edu.vn/f8-prod/blog_posts/279/6153f692d366e.jpg",
+                "thumbnail_url": "https://files.fullstack.edu.vn/f8-prod/blog_posts/279/6153f6932dcea.jpg",
+                "is_bookmark": false,
+                "is_published": true,
+                "user": {
+                    "id": 1,
+                    "username": "son-dang",
+                    "first_name": "Sơn",
+                    "last_name": "Đặng",
+                    "full_name": "Sơn Đặng",
+                    "avatar": "user_avatars/1/623d4b2d95cec.png",
+                    "avatar_url": "https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png",
+                    "cover_url": "",
+                    "is_comment_blocked": false,
+                    "is_blocked": false
+                }
+            },
+            {
+                "id": 51,
+                "user_id": 56767,
+                "title": "Ký sự ngày thứ 25 học ở F8 ",
+                "slug": "ky-su-ngay-thu-25-hoc-o-f8-1",
+                "description": null,
+                "meta_title": "Ký sự ngày thứ 25 học ở F8 ",
+                "meta_description": "Hí ae, tôi cũng tên Sơn nhưng mà là newbie còn ông Sơn kia thì trùm rồi :))). Tôi cũng vừa mới đến với lập trình,tôi là sv năm 1....",
+                "image": "blog_posts/51/6139c6453456e.png",
+                "thumbnail": "blog_posts/51/6139c645e1a84.png",
+                "min_read": 1,
+                "published_at": "2021-09-09 15:31:02",
+                "is_approved": true,
+                "created_at": "2021-09-09T01:06:41.000000Z",
+                "reactions_count": 335,
+                "image_url": "https://files.fullstack.edu.vn/f8-prod/blog_posts/51/6139c6453456e.png",
+                "thumbnail_url": "https://files.fullstack.edu.vn/f8-prod/blog_posts/51/6139c645e1a84.png",
+                "is_bookmark": false,
+                "is_published": true,
+                "user": {
+                    "id": 56767,
+                    "username": "son-son-16",
+                    "first_name": "Sơn",
+                    "last_name": "Sơn",
+                    "full_name": "Sơn Sơn",
+                    "avatar": "https://graph.facebook.com/1642531882604203/picture?width=400&height=400",
+                    "avatar_url": "https://graph.facebook.com/1642531882604203/picture?width=400&height=400",
+                    "cover_url": "",
+                    "is_comment_blocked": false,
+                    "is_blocked": false
+                }
+            },
+        ]
+
+        function CourseItem({ course, onClickBtn }) {
+            return (
+                <div >
+                    <h1 onClick={() => onClickBtn(course)}>{course.title}</h1>
+                    <img src={course.thumbnail_url} alt="" />
+                    <p>{course.desc}</p>
+                </div>
+            )
+        }
+        //Container
+        function App() {
+
+            //useCallback
+            const handleClick = (course) => {
+                console.log(course.title);
+            }
+
+            return (
+                <div className="wrapper">
+                    {
+                        courses.map(item => {
+                            return (
+                                <CourseItem
+                                    key={item.id}
+                                    course={item}
+                                    onClickBtn={handleClick}
+                                />)
+                        })
+                    }
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+</body>
+
+</html>

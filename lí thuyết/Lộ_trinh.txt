@@ -1,0 +1,9 @@
+ Lộ trình học ReactJS
+ 0. TypeScript 
+ 1. ClassComponent và Life Cycle 
+ 2. Functional Component
+ 3. hooks
+ 4. Router
+ 5. Forms 
+ 6. React Advance
+ 7. Call Api = axios

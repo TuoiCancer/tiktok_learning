@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Events</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        Làm việc với JSX :
+        II. 
+         - Props trong JSX
+         - <Your component 
+                proName1 = "String literals"
+                proName2={expression_bieu thuc} 
+            />
+         - Props default to "true"
+         - Spread/rest props
+         - Chidren prop 
+            - <your component>String literals </your component>
+            -<your component>{expression}</your component>
+         - Render props 
+     -->
+    <div class="root"></div>
+
+    <script type="text/babel">
+
+        function Input({ label, ...inputProps }) {
+            console.log(inputProps);
+            return (
+                <div>
+                    <label>{label}</label>
+                    <input {...inputProps} />
+                </div>
+            )
+        }
+
+        function Button({ children }) {
+            return (
+                <button>{children}</button>
+            )
+        }
+
+        function List({ data, children }) {
+            return (
+                <ul>
+
+                    {data.map((...props) => children(...props))}
+                </ul>
+            )
+        }
+        //children là function return thẻ li , thường để render ra 1 list thì sẽ viết vào List như sau :
+        // {data.map(item => <li>{item}</li> )} . Tuy nhiên trong TH không muốn render thẻ li, mà muôn render nó dưới dạng childern props thì sẽ viết như kia 
+        //container
+        function App() {
+            const cars = ['BMW', 'Honda', 'Mazda'];
+            return (
+                <div id="wrapper">
+                    <Input
+                        label="fullname"
+                        type="text"
+                        placeholder="Enter your full name"
+                    />
+                    <Button>Click me</Button>
+                    <List data={cars}>
+                        {(item, ind) => //function là hàm nhận item,ind rồi trả lại vào thẻ li , but làm sao để nhận đc thẻ li? Ta phải gọi hàm children và truyền tham số cho nó 
+                            <li key={ind}>{item}</li>}
+                    </List>
+                </div>
+            )
+        }
+
+
+        ReactDOM.render(<App />, document.querySelector(".root"));
+    </script>
+</body>
+
+</html>

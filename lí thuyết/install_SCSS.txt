@@ -1,0 +1,2 @@
+- trong create react app : mặc định hỗ trợ file css và scss
+- cài đặt module sass 

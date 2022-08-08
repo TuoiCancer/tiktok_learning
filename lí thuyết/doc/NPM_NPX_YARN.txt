@@ -1,0 +1,17 @@
+ - NPM 
+    - Project scope : khi install hoặc uninstall thì nó sẽ cài đặt hoặc gỡ ở chính cái dự án của mình cho dù có nhiều dự án khác cũng không ảnh hưởng gì 
+        - npm install react react-dom => dependencies 
+        - shorthand: npm i react react-dom
+
+        - npm install --save-dev react react-dom => devDependencies 
+        -shorthand: npm i -D react react-dom => devDependencies 
+
+        - npm uninstall react react-dom
+    
+    - Global scope: sử dụng khi dự án không phụ thuộc vào thư viện đó. 
+        - npm i --global create-react-app tiktok
+        -npm uninstall -g create-react-app
+ - NPX: 
+    - tại sao dùng NPX? 
+        + giúp không phải cài các thư viện lên máy 
+        + nếu máy mà k có sẽ chuyển lên npm để 

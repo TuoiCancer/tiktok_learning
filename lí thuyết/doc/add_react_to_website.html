@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reactJs</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const ctn = document.querySelector("#root");
+
+        function PostItem() {
+            return (
+                <div className="post-item">
+                    <h2 className="post-title">C#(.NET) - Tương tác với ...</h2>
+                    <p className="post-desc">Bạn có kiến thức nghành </p>
+                    <p className="post-publish">Một ngày trước</p>
+                </div>
+            )
+        }
+
+        const app = (
+            <div className="posts-list">
+                <PostItem />
+                <PostItem />
+                <PostItem />
+            </div>
+        )
+
+        ReactDOM.render(app, ctn)
+    </script>
+</body>
+
+</html>

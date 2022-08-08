@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Events</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        Làm việc với JSX :
+        I. 
+         - Xử lí DOM event : vẫn viết như trong JS nhưng theo quy chuẩn camelCase vd: onClick, onKeyup, ...
+         - Component do ta định nghĩa phải viết in hoa kí tự đầu:
+         - Boolean, Null && Undefined khong được render
+         - kết hợp toán tử logic để render theo điều kiện
+        
+     -->
+    <div class="root"></div>
+
+    <script type="text/babel">
+
+        const Form = {
+            Input() {
+                return <input />
+            },
+            Checkbox() {
+                return <input type="checkbox" />
+            }
+        }
+
+        //container
+        function App() {
+            const type = "Checkbox"
+            const Component = Form[type] // nếu viết y nguyên <Form[type] /> như này thì sẽ vi phạm quy chuẩn của ReactJS sẽ bị báo warning nên cần phải gán vào 1 biến khác
+            return (
+                <div id="wrapper">
+                    <Component />
+                </div>
+            )
+        }
+
+
+        ReactDOM.render(<App />, document.querySelector(".root"));
+    </script>
+</body>
+
+</html>

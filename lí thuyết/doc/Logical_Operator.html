@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- Boolean, null , undefined không được render ra giao diện? Tại sao   
+       =>  React kiểm tra child nếu gặp 1 trong các giá trị trên thì sẽ k render ra giao diện, điều này giúp hỗ trợ việc kết hợp với các toán tử logic 
+    -->
+
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+
+        function App({ title, content }) {
+
+            let firstAccess = true;
+
+            return (
+                <div className="wrapper">
+                    {title || content}
+                </div>
+            )
+        }
+        ReactDOM.render(<App title="f8" content="Welcome to my blog" />, root);
+    </script>
+
+</body>
+
+</html>

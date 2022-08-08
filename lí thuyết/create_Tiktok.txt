@@ -1,0 +1,3 @@
+1. tạo dự án TIKTok : npx create-react-app tiktok-ui
+2. customize-cra : tùy chỉnh create-react-app , cấu hình webpack.
+3.

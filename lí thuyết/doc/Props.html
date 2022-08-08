@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Props</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        Props 
+        - react elements : những thẻ giống như HTML
+            - sử dụng props giống như attribute của thẻ HTML 
+            - 2 props class,for => className, htmlFor 
+            - nếu truyền props vào element sẽ nhận dưới dạng props và có giá trị mặc định là true
+            - Phải tuân theo quy ước có sẵn
+        - React Components: những function 
+            -Sử dụng props giống như đối số cho Component
+            -Tự do đặt tên cho props :
+                - đặt theo camelCase
+                - có thể bao gồm dấu gạch ngang
+        - NOTE: 
+            -prop "key" là prop đặc biệt, chỉ dùng khi mà đưa vào trong mảng
+            -props cơ bản là đối số của component => nó có thể là bất cứ dữ liệu gì 
+            - sử dụng destructuring
+     -->
+    <div class="root"></div>
+
+    <script type="text/babel">
+        const root = document.querySelector(".root");
+
+
+        function PostItem({
+            image,
+            title,
+            description,
+            publishedAt,
+            callBackFn = () => { } // giá trị default nếu component nào k có callback thì sẽ có giá trị defeult là 1 callback để khi gọi hàm sẽ k bị lỗi 
+        }) {
+            params.callBackFn(Math.random()); //gọi hàm callback 
+            return (
+                <div className="post_item">
+                    <img src={image} alt="" />
+                    <h2 className="post-title"> {title} </h2>
+                    <p className="post-desc">{description}</p>
+                    <p className="post-published">{publishedAt}</p>
+                </div>
+            )
+        }
+
+        //app.js 
+        function App() {
+            return (
+                <div id="wrapper">
+                    <PostItem
+                        image="https://images.unsplash.com/photo-1635293496618-a1fa6260f411?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
+                        title="C#.Net - tuong tac"
+                        description="Ban co kien thuc ngon ngu C/ C++"
+                        publishedAt="1 day ago "
+                        callBackFn={(number) => {
+                            console.log(number);
+                        }}
+                    />
+                </div>
+            )
+        }
+        //index.js
+        ReactDOM.render(<App />, root);
+    </script>
+</body>
+
+</html>
